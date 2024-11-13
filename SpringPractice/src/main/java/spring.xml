@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
-        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="tcsCoders" class="com.Darshan.SpringPractice.TCSers"></bean>    
+	
+<!--	<bean id="tcsCoders1" class="com.Darshan.SpringPractice.TCSers" scope="prototype">  -->
 
+	<bean id="tcsCoders" class="com.Darshan.SpringPractice.TCSCoders">  <!-- we use value attribute for injecting value -->
+	    <property name="yearsOfExperience" value="2"> </property>	
+	    <property name="testers" ref="tcsTesters"> </property>  <!-- we use ref attribute for injecting reference -->
+	</bean>
+	
+	
+		<bean id="tcsTesters" class="com.Darshan.SpringPractice.TCSTesters"></bean>
+	
+	
 </beans>
