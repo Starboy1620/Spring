@@ -15,5 +15,6 @@ public class App
 		// which is subset off BeanFactory as we know Spring Container objects, configures and assembles their dependencies
 
         TCSers tcs = (TCSers) context.getBean("tcsCoders");
+        tcs.code();
     }
 }
